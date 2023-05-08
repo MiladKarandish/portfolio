@@ -1,0 +1,18 @@
+$scrollbar-height: 50vh;
+
+._ {
+  position: relative;
+  width: 4px;
+  height: $scrollbar-height;
+  border-radius: 7px;
+  background-color: #e2eefe;
+  margin-inline-start: auto;
+
+  ._thumb {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background-color: #031943;
+    transition: top 0.3s ease;
+  }
+}
