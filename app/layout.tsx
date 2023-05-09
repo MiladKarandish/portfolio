@@ -10,7 +10,7 @@ import Intro from '@/components/Intro';
 
 const inter = Inter({ subsets: ['latin'] });
 
-export const metadata = {
+const metadata = {
   title: 'Milad Karandish',
   description: 'Milad Karandish Portfolio',
 };
