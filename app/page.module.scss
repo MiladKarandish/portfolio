@@ -1,10 +1,11 @@
 $texts-inline-margin: 2rem;
 
 .main {
-  width: 100%;
+  width: 80%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   gap: 3rem;
   padding: 1rem 5rem;
 
@@ -21,6 +22,42 @@ $texts-inline-margin: 2rem;
     h3 {
       margin-inline-start: calc($texts-inline-margin * 2);
       font-family: 'roboto';
+    }
+
+    ._tech {
+      position: absolute;
+      transform: translateY(200%);
+      opacity: 0;
+      transition: all 0.5s ease;
+    }
+
+    .active {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .next-active {
+      transform: translateY(100%) scale(0.9);
+      opacity: 0.1;
+    }
+  }
+
+  ._contact {
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-inline-start: auto;
+    transform: translateY(2rem);
+
+    img {
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    img:hover {
+      transform: scale(0.8);
     }
   }
 }
