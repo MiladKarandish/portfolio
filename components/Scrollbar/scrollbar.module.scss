@@ -2,10 +2,11 @@ $scrollbar-height: 50vh;
 
 ._ {
   position: relative;
-  width: 4px;
+  min-width: 4px;
   height: $scrollbar-height;
   border-radius: 7px;
   background-color: #e2eefe;
+  margin: auto 0;
   margin-inline-start: auto;
 
   ._thumb {

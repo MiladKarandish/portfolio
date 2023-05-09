@@ -1,0 +1,29 @@
+._ {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: auto;
+  padding: 1rem;
+  overflow: hidden;
+
+  .canvas {
+    display: block;
+  }
+
+  ._tech-labels {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    gap: 1rem;
+    margin: auto;
+    padding: 1rem;
+    font-size: 2rem;
+  }
+
+  li {
+    cursor: pointer;
+  }
+}
