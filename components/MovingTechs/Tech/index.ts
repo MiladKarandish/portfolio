@@ -1,7 +1,7 @@
 /** @type {HTMLCanvasElement} */
 
-const focusSize = 150;
-const originalSize = 100;
+// const focusSize = 150;
+// const originalSize = window.innerWidth / 10;
 
 export default class Tech {
   generator: any;
@@ -21,6 +21,8 @@ export default class Tech {
   isFocus: boolean;
   fraction: number;
   ease: number;
+  originalSize: number;
+  focusSize: number;
 
   constructor(generator: any, imagePath: string, name: string) {
     this.generator = generator;
@@ -43,6 +45,9 @@ export default class Tech {
     };
     this.isStatic = false;
     this.isFocus = false;
+
+    this.originalSize = Math.min(Math.max(60, window.innerWidth / 5), 100);
+    this.focusSize = this.size + 50;
 
     this.fraction = 0.9;
     this.ease = 0.1;
@@ -71,7 +76,7 @@ export default class Tech {
       this.y +=
         (this.vy *= this.fraction) + (this.originals.y - this.y) * this.ease;
 
-      if (this.isFocus && this.size < focusSize) {
+      if (this.isFocus && this.size < this.focusSize) {
         this.size += 10;
         this.x--;
         this.y++;
@@ -88,7 +93,7 @@ export default class Tech {
       }
     }
 
-    if (!this.isFocus && this.size >= originalSize) {
+    if (!this.isFocus && this.size >= this.originalSize) {
       this.size -= 10;
     }
 
@@ -114,6 +119,11 @@ export default class Tech {
   }
 
   resizing() {
+    this.originalSize = Math.min(Math.max(60, window.innerWidth / 5), 100);
+    this.size = Math.min(Math.max(60, window.innerWidth / 5), 100);
+
+    this.focusSize = this.size + 50;
+
     if (this.x + this.size > this.generator.canvasWidth) {
       this.x = this.generator.canvasWidth - this.size;
     }
@@ -127,7 +137,8 @@ export default class Tech {
     text?.addEventListener('mouseenter', () => {
       this.static(
         true,
-        (this.originals.x = this.generator.canvasWidth / 2 - focusSize / 2),
+        (this.originals.x =
+          this.generator.canvasWidth / 2 - this.focusSize / 2),
         (this.originals.y = 0),
         true
       );

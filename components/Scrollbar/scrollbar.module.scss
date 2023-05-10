@@ -8,6 +8,7 @@ $scrollbar-height: 50vh;
   background-color: #e2eefe;
   margin: auto 0;
   margin-inline-start: auto;
+  z-index: 2;
 
   ._thumb {
     position: absolute;

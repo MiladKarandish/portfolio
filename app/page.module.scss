@@ -61,4 +61,53 @@ $texts-inline-margin: 2rem;
       transform: scale(0.8);
     }
   }
+
+  @media (max-width: 900px) {
+    width: 100%;
+    align-items: center;
+    padding: 0;
+    gap: 25vw;
+
+    * {
+      font-size: 10vw;
+      text-align: center;
+    }
+
+    ._showcase {
+      margin: 0;
+
+      h2,
+      h3 {
+        margin: 0;
+      }
+
+      ._tech {
+        left: 50%;
+        transform: translate(-50%, 200%);
+        font-size: clamp(0.5rem, 7vw, 3rem);
+      }
+
+      .active {
+        transform: translate(-50%, 10px);
+      }
+
+      .next-active {
+        transform: translate(-50%, calc(100% + 10px)) scale(0.9);
+      }
+    }
+
+    ._contact {
+      width: 70%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+      margin: 0;
+      transform: translateY(0);
+
+      img {
+        max-width: 10vw;
+      }
+    }
+  }
 }

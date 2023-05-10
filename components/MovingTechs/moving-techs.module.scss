@@ -16,8 +16,8 @@
     width: 100%;
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-between;
-    gap: 1rem;
+    justify-content: center;
+    gap: clamp(0.5rem, 10vw, 3rem);
     margin: auto;
     padding: 1rem;
     font-size: 2rem;

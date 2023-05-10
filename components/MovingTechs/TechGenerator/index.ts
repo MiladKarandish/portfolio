@@ -16,7 +16,7 @@ export default class TechGenerator {
   ) {
     (this.ctx = ctx), (this.canvasWidth = canvasWidth);
     this.canvasHeight = canvasHeight;
-    this.size = 100;
+    this.size = Math.min(Math.max(60, window.innerWidth / 5), 100);
     this.techs = [];
     this.techsPath = techsPath;
   }
@@ -34,6 +34,7 @@ export default class TechGenerator {
   resize(width: number, height: number) {
     this.canvasWidth = width;
     this.canvasHeight = height;
+    this.size = Math.min(Math.max(60, window.innerWidth / 5), 100);
 
     this.techs.forEach((tech) => tech.resizing());
   }
@@ -55,7 +56,7 @@ export default class TechGenerator {
         item.static(
           true,
           idx === 0 ? t2 : idx * width + t2,
-          (line - 1) * this.size + 5
+          (line - 1) * this.size + 20
         );
       });
     });

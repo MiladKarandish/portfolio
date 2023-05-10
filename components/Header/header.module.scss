@@ -32,4 +32,8 @@ $active-button-border-color: #ffffff7c;
     display: block;
     background-color: #fff;
   }
+
+  @media (max-width: 500px) {
+    display: none;
+  }
 }
