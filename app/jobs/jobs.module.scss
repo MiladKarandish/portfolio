@@ -8,7 +8,7 @@
   padding: 3rem 10rem;
 
   h1 {
-    font-size: 3rem;
+    font-size: clamp(1rem, 7vw, 3rem);
     margin-inline-start: 2rem;
   }
 
@@ -81,6 +81,34 @@
       width: 10px;
       height: 1px;
       transform: translateY(-50%);
+    }
+  }
+
+  @media (max-width: 900px) {
+    gap: 5rem;
+    padding: 2rem 2rem;
+    font-size: 1vw;
+  }
+
+  @media (max-width: 650px) {
+    ._container {
+      flex-direction: column;
+    }
+
+    ._list {
+      display: flex;
+
+      li {
+        border: 0;
+        padding: 0.5rem 1rem;
+      }
+
+      .underline {
+        right: 0;
+        top: 100%;
+        width: 100%;
+        height: 2px;
+      }
     }
   }
 }
