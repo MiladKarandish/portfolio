@@ -28,7 +28,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   const [activeSlide, setActiveSlide] = useState(() => 0);
-  const [isIntroEnd, setIsIntroEnd] = useState(false);
+  const [isIntroEnd, setIsIntroEnd] = useState(true);
   const contianerRef = useRef<any>(null!);
 
   // After intro end
@@ -43,6 +43,9 @@ export default function RootLayout({
 
   return (
     <html lang='en'>
+      <head>
+        <title>My f Portfolio</title>
+      </head>
       <body ref={contianerRef} className={inter.className}>
         {!isIntroEnd ? (
           <Intro callback={introEndHandler} />
