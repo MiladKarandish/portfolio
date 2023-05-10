@@ -3,7 +3,7 @@
 const focusSize = 150;
 const originalSize = 100;
 
-class Tech {
+export default class Tech {
   generator: any;
   name: string;
   img: any;
@@ -138,5 +138,3 @@ class Tech {
     });
   }
 }
-
-export default Tech;

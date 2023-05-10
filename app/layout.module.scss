@@ -1,5 +1,18 @@
-._container {
-  flex: 1;
+.main-container {
   display: flex;
-  align-items: stretch;
+  flex-direction: column;
+  height: 100vh;
+  padding: 1rem 1.2rem;
+  transition: opacity 1s ease;
+
+  footer {
+    margin-top: auto;
+  }
+
+  ._container {
+    flex: 1 1 auto;
+    display: flex;
+    align-items: stretch;
+    overflow: hidden;
+  }
 }

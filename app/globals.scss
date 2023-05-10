@@ -5,6 +5,7 @@
   --text-color: #1a2334;
   --font-family: 'Caveat';
   --font-size: 16px;
+  --text-active-color: #637eae;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -24,27 +25,36 @@
 html,
 body {
   max-width: 100vw;
+  max-height: 100vh;
   overflow-x: hidden;
   font-size: var(--font-size);
+  overflow: hidden;
 }
 
 body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100dvh;
   color: var(--text-color);
   background: var(--bg-color);
-  padding: 1rem 1.2rem;
-  transition: opacity 1s ease;
-
-  footer {
-    margin-top: auto;
-  }
 }
 
 a {
   color: inherit;
   text-decoration: none;
+}
+
+.has-scroll {
+  * {
+    pointer-events: none;
+  }
+
+  &::-webkit-scrollbar {
+    width: 5px;
+    background: #fff;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    width: 5px;
+    background: #031943;
+  }
 }
 
 ul,

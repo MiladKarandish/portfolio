@@ -1,8 +1,9 @@
+'use client';
 import MovingTechs from '@/components/MovingTechs';
 import PageWrapper from '@/components/PageWrapper';
 import React from 'react';
 
-const page = () => {
+const Skills = () => {
   return (
     <PageWrapper>
       <MovingTechs />
@@ -10,4 +11,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Skills;

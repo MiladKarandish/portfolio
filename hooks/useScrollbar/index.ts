@@ -10,6 +10,15 @@ export default function useScrollbar(
 
     // Wheel
     const scrollHandler = (e: WheelEvent) => {
+      const target = e.target as HTMLElement;
+
+      if (
+        target.classList.contains('has-scroll') &&
+        target.scrollHeight > target.clientHeight
+      ) {
+        return;
+      }
+
       if (e.deltaY > 0) {
         setActiveSlide((prev) => (prev < slidesCount - 1 ? prev + 1 : prev));
       } else {
@@ -34,11 +43,19 @@ export default function useScrollbar(
     };
 
     const touchScrollHandler = (e: TouchEvent) => {
+      const target = e.target as HTMLElement;
+      if (
+        target.classList.contains('has-scroll') &&
+        target.scrollHeight > target.clientHeight
+      ) {
+        return;
+      }
+
       const now = start - e.touches[0].screenY;
-      if (now > 0 && !changed) {
+      if (now > 10 && !changed) {
         setActiveSlide((prev) => (prev < slidesCount - 1 ? prev + 1 : prev));
         changed = true;
-      } else if (!changed) {
+      } else if (!changed && now < -10) {
         setActiveSlide((prev) => (prev > 0 ? prev - 1 : prev));
         changed = true;
       }

@@ -1,9 +1,9 @@
 'use client';
 import Link from 'next/link';
-import { usePathname, useRouter } from 'next/navigation';
-import { motion } from 'framer-motion';
-import styles from './header.module.scss';
 import { useEffect } from 'react';
+import { usePathname, useRouter } from 'next/navigation';
+import styles from './header.module.scss';
+import { motion } from 'framer-motion';
 
 interface link {
   href: string;
