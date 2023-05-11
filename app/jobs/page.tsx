@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import PageWrapper from '@/components/PageWrapper';
 import styles from './jobs.module.scss';
 import { motion } from 'framer-motion';
@@ -40,6 +40,46 @@ const jobs: Job[] = [
 
 const Jobs = () => {
   const [activeJob, setactiveJob] = useState<Job>(jobs[0]);
+  const [isSmallScreen, setsIsSmallScreen] = useState<boolean>(false);
+
+  const jobDataRenderer = (job: Job) => {
+    return (
+      <>
+        <div>
+          <h2>{job.role}</h2>
+          <span> @ {job.title}</span>
+        </div>
+
+        <div>
+          <span>{job.date}</span>
+        </div>
+
+        <ul>
+          {job.keys.map((key) => (
+            <li key={key}>{key}</li>
+          ))}
+        </ul>
+      </>
+    );
+  };
+
+  useEffect(() => {
+    const sizeHandler = () => {
+      if (window.innerWidth <= 650) {
+        setsIsSmallScreen(true);
+      } else {
+        setsIsSmallScreen(false);
+      }
+    };
+
+    sizeHandler();
+
+    window.addEventListener('resize', sizeHandler);
+
+    return () => {
+      window.removeEventListener('resize', sizeHandler);
+    };
+  }, []);
 
   return (
     <PageWrapper>
@@ -70,20 +110,9 @@ const Jobs = () => {
           </ul>
 
           <div className={`has-scroll ${styles['_data']}`}>
-            <div>
-              <h2>{activeJob.role}</h2>
-              <span> @ {activeJob.title}</span>
-            </div>
-
-            <div>
-              <span>{activeJob.date}</span>
-            </div>
-
-            <ul>
-              {activeJob.keys.map((key) => (
-                <li key={key}>{key}</li>
-              ))}
-            </ul>
+            {!isSmallScreen
+              ? jobDataRenderer(activeJob)
+              : jobs.map((job) => jobDataRenderer(job))}
           </div>
         </div>
       </div>

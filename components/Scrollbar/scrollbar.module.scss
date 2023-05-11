@@ -17,4 +17,9 @@ $scrollbar-height: 50vh;
     background-color: #031943;
     transition: top 0.3s ease;
   }
+
+  @media (max-width: 650px) {
+    min-width: 2px;
+    margin-inline-start: 1rem;
+  }
 }

@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import PageWrapper from '@/components/PageWrapper';
 import styles from './projects.module.scss';
 import { motion } from 'framer-motion';
@@ -44,6 +44,44 @@ const projects: Project[] = [
 
 const Jobs = () => {
   const [activeProject, setactiveProject] = useState<Project>(projects[0]);
+  const [isSmallScreen, setsIsSmallScreen] = useState<boolean>(false);
+
+  const projectDataRenderer = (project: Project) => {
+    return (
+      <>
+        <h2>{project.title}</h2>
+
+        <ul>
+          {project.techs &&
+            project.techs.map((tech) => <li key={tech}>{tech}</li>)}
+        </ul>
+
+        <span>{project.description}</span>
+
+        <ul>
+          {project.keys && project.keys.map((key) => <li key={key}>{key}</li>)}
+        </ul>
+      </>
+    );
+  };
+
+  useEffect(() => {
+    const sizeHandler = () => {
+      if (window.innerWidth <= 650) {
+        setsIsSmallScreen(true);
+      } else {
+        setsIsSmallScreen(false);
+      }
+    };
+
+    sizeHandler();
+
+    window.addEventListener('resize', sizeHandler);
+
+    return () => {
+      window.removeEventListener('resize', sizeHandler);
+    };
+  }, []);
 
   return (
     <PageWrapper>
@@ -76,23 +114,9 @@ const Jobs = () => {
           </ul>
 
           <div className={`has-scroll ${styles['_data']}`}>
-            <div>
-              <h2>{activeProject.title}</h2>
-            </div>
-
-            <ul>
-              {activeProject.techs &&
-                activeProject.techs.map((tech) => <li key={tech}>{tech}</li>)}
-            </ul>
-
-            <div>
-              <span>{activeProject.description}</span>
-            </div>
-
-            <ul>
-              {activeProject.keys &&
-                activeProject.keys.map((key) => <li key={key}>{key}</li>)}
-            </ul>
+            {!isSmallScreen
+              ? projectDataRenderer(activeProject)
+              : projects.map((project) => projectDataRenderer(project))}
           </div>
         </div>
       </div>
