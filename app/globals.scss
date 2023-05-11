@@ -55,6 +55,18 @@ a {
     width: 5px;
     background: #031943;
   }
+
+  @media (max-width: 650px) {
+    &::-webkit-scrollbar {
+      width: 2px;
+      background: #fff;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      width: 2px;
+      background: #031943;
+    }
+  }
 }
 
 ul,

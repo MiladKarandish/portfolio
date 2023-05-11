@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { Fragment, useEffect, useState } from 'react';
 import PageWrapper from '@/components/PageWrapper';
 import styles from './projects.module.scss';
 import { motion } from 'framer-motion';
@@ -116,7 +116,11 @@ const Jobs = () => {
           <div className={`has-scroll ${styles['_data']}`}>
             {!isSmallScreen
               ? projectDataRenderer(activeProject)
-              : projects.map((project) => projectDataRenderer(project))}
+              : projects.map((project) => (
+                  <Fragment key={project.id}>
+                    {projectDataRenderer(project)}
+                  </Fragment>
+                ))}
           </div>
         </div>
       </div>
