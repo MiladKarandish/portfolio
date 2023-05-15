@@ -10,7 +10,7 @@ interface Props {
 
 const Intro = ({ callback }: Props) => {
   const canvasRef = useRef<HTMLCanvasElement>(null!);
-  const text: string[] = ['Hello'];
+  const text: string[] = ['Hello', 'Welcome', 'To My Portfolio'];
   const changeTime: number = 2;
   let effect = useRef<any>(null!);
   let ctx = useRef<any>(null!);
@@ -59,7 +59,7 @@ const Intro = ({ callback }: Props) => {
             canvasRef.current.width,
             canvasRef.current.height
           );
-          console.log(text[counter]);
+
           effect.current.wrapText(text[counter]);
         } else {
           callback && callback();

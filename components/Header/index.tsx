@@ -4,6 +4,8 @@ import { useEffect } from 'react';
 import { usePathname, useRouter } from 'next/navigation';
 import styles from './header.module.scss';
 import { motion } from 'framer-motion';
+import logo from '@/public/icons/logo.png';
+import Image from 'next/image';
 
 interface link {
   href: string;
@@ -27,7 +29,7 @@ export default function Header({ links, activeLink, setActiveLink }: Props) {
 
   return (
     <header className={styles['_']}>
-      <span>EN</span>
+      <Image priority height={50} width={50} src={logo} alt={`logo`} />
       {links.map((link) => (
         <button key={link.href} onClick={() => setActiveLink(link.index)}>
           {link.href === pathName && (

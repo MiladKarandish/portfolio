@@ -34,6 +34,7 @@ body {
 body {
   color: var(--text-color);
   background: var(--bg-color);
+  transition: opacity 0.5s ease;
 }
 
 a {

@@ -18,7 +18,7 @@ const jobs: Job[] = [
     id: 1,
     title: 'Fortune Web Works',
     role: 'Front-End Developer',
-    date: 'jun 2020, aug 2022',
+    date: 'Jun 2020, Aug 2022',
     keys: [
       'Making reliable and efficient web apps.',
       'Deciding the tech stack of every project and reviewing code.',
@@ -27,9 +27,9 @@ const jobs: Job[] = [
   },
   {
     id: 2,
-    title: 'Google',
+    title: 'Pishgamanasia',
     role: 'Front-End Developer',
-    date: 'jun 2020, aug 2022',
+    date: 'Oct 2022, May 2023',
     keys: [
       'Managing junior react developers.',
       'Developing reliable frontends which work perfectly with the APIs of electronic devices.',

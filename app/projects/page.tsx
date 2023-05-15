@@ -8,6 +8,7 @@ import { motion } from 'framer-motion';
 interface Project {
   id: number;
   title: string;
+  link: string;
   at?: string;
   techs: string[];
   description: string;
@@ -17,28 +18,28 @@ interface Project {
 const projects: Project[] = [
   {
     id: 1,
-    title: 'Canvas Selector',
-    techs: [
-      'Laravel',
-      'Inertia',
-      'React',
-      'HTML Canvas',
-      'Nginx',
-      'Postgresql',
-    ],
+    title: 'Image Cutter',
+    link: 'https://old-image-cutter.vercel.app/',
+    techs: ['HTML Canvas', 'JavaScript'],
     description:
-      'Aramesh organization is a Family Therapy clinic. The board wanted to turn a family assessment test that they had developed into a full-fledged web app. This project needed efficient approach and clarity in design for the therapists and practitioners to be able to employ the information derived from the te results in their practices and studies',
-    keys: [
-      'I developed a fully interactive chart package using canvas API.',
-      'I used inertia.js to write single-page applications (SPA) using classic server-side routing and controllers.',
-    ],
+      'A tool built with HTML Canvas that can be used to crop images. It’s mostly like cropper.js but I developed it from 0 to 100. the reason I built it over was first we didn’t want to relay on libraires that much and second we wanted something lighter.',
+    keys: ['I developed it from 0 to 100', 'No library used'],
   },
   {
     id: 2,
-    title: 'Google',
-    techs: ['HTML', 'JavaScript'],
+    title: 'Guess game with bot',
+    link: 'https://guess-game-sigma.vercel.app/',
+    techs: ['HTML', 'CSS', 'JavaScript'],
     description:
-      'The main technologies are React, typescript, websockets, pwa and sass. We used WEBSOCKET to be able to live share the data about location, speed and much more in order to be able to monitor the drivers behavior and passengers security. We considered performance as a key substance in order to transfer enormous amount of data and render live location of drivers and their behavior. I worked hard on the workflow and communication between myself and other Front-End Developers, Back-End developers and designers in order to achieve the best performance and considering best practices',
+      'I got inspiration from an Android game to make this project(lingolish). I created it using React. It has 3 level hardness that can be choose. You and a bot will guess words until one of you guess the right word.',
+  },
+  {
+    id: 3,
+    title: 'Cyber Dash',
+    link: 'https://cyber-react-sass.vercel.app/',
+    techs: ['React', 'Sass', 'Chart.js'],
+    description:
+      'a website for scoring and showing NFTs. Technologies used in this project: Node.js, React, sass, Material UI, Chart.js.',
   },
 ];
 
@@ -49,16 +50,18 @@ const Jobs = () => {
   const projectDataRenderer = (project: Project) => {
     return (
       <>
-        <h2>{project.title}</h2>
+        <h2 onClick={() => window.open(project.link, '_blank')}>
+          {project.title}
+        </h2>
 
-        <ul>
+        <ul className={styles['_techs']}>
           {project.techs &&
             project.techs.map((tech) => <li key={tech}>{tech}</li>)}
         </ul>
 
         <span>{project.description}</span>
 
-        <ul>
+        <ul className={styles['_keys']}>
           {project.keys && project.keys.map((key) => <li key={key}>{key}</li>)}
         </ul>
       </>

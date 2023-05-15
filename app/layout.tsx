@@ -10,11 +10,6 @@ import Intro from '@/components/Intro';
 
 const inter = Inter({ subsets: ['latin'] });
 
-// const metadata = {
-//   title: 'Milad Karandish',
-//   description: 'Milad Karandish Portfolio',
-// };
-
 const links = [
   { href: '/', label: 'Who Am I', index: 0 },
   { href: '/jobs', label: 'Jobs', index: 1 },
@@ -62,7 +57,7 @@ export default function RootLayout({
                 slidesCount={links.length}
               />
             </div>
-            <Footer />
+            {/* <Footer /> */}
           </div>
         )}
       </body>
