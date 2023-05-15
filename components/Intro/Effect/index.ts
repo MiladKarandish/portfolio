@@ -24,7 +24,7 @@ class Effect {
     this.wordMaxWidth = this.width * 0.8;
     this.textX = this.width / 2;
     this.textY = this.height / 2;
-    this.fontSize = 100;
+    this.fontSize = 80;
     this.lineHeight = this.fontSize * 1;
     this.particles = [];
     this.gap = 1;
