@@ -55,7 +55,7 @@ export default function Home() {
       <main className={styles.main}>
         <div className={styles['_showcase']}>
           <h1>Milad Karandish</h1>
-          <h2>Frton-End Developer</h2>
+          <h2>Front-End Developer</h2>
 
           {techs.map((item, index) => (
             <h3
