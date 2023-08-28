@@ -14,8 +14,8 @@ const techs = [
   'JavaScript',
   'React',
   'TypeScript',
-  'Next',
-  'Three',
+  'Next.js',
+  'Three.js',
 ];
 
 const socials = [
