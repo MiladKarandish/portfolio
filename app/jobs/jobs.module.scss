@@ -50,9 +50,9 @@
     flex-direction: column;
     overflow: auto;
 
-    // h2 {
-    //   font-family: 'roboto';
-    // }
+    h2 {
+      font-family: var(--regular-font-family);
+    }
 
     span,
     li {
@@ -121,7 +121,7 @@
 
     ._data {
       h2 {
-        // font-family: 'roboto';
+        font-family: var(--regular-font-family);
         font-size: 3.5vw;
       }
 
