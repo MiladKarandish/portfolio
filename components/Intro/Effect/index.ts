@@ -1,4 +1,4 @@
-import Particle from '../Particles';
+import Particle from "../Particles";
 
 class Effect {
   c: any;
@@ -33,29 +33,31 @@ class Effect {
       x: undefined,
       y: undefined,
     };
-    document.addEventListener('mousemove', (e) => {
+    document.addEventListener("mousemove", (e) => {
       (this.mouse.x = e.x), (this.mouse.y = e.y);
     });
   }
 
   wrapText(text: string) {
     // Canvas settings
-    this.c.fillStyle = '#FFFFFF';
-    this.c.textAlign = 'center';
-    this.c.textBaseline = 'middle';
+    this.c.fillStyle = "#FFFFFF";
+    this.c.textAlign = "center";
+    this.c.textBaseline = "middle";
     this.c.lineWidth = 5;
-    this.c.font = `${this.fontSize}px Caveat`;
+    this.c.font = `${this.fontSize}px ${getComputedStyle(
+      document.body
+    ).getPropertyValue("--font-caveat")}`;
     // Break
     const lines = [];
     let lineCount = 0;
-    let line = '';
-    let words = text.split(' ');
+    let line = "";
+    let words = text.split(" ");
 
     for (let i = 0; i < words.length; i++) {
-      const testLine = line + words[i] + ' ';
+      const testLine = line + words[i] + " ";
 
       if (this.c.measureText(testLine).width > this.wordMaxWidth) {
-        line = words[i] + ' ';
+        line = words[i] + " ";
         lineCount++;
       } else {
         line = testLine;
