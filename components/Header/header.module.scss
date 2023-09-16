@@ -9,7 +9,7 @@ $active-button-border-color: #ffffff7c;
   gap: 3rem;
   opacity: 1;
 
-  button {
+  a {
     position: relative;
     border: none;
     padding-bottom: 5px;
@@ -19,7 +19,7 @@ $active-button-border-color: #ffffff7c;
     transition: all 0.3s ease;
   }
 
-  button:nth-child(2) {
+  a:nth-child(2) {
     margin-inline-start: auto;
   }
 
