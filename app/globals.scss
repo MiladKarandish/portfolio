@@ -4,8 +4,6 @@
   --border-radius: 12px;
   --bg-color: #1a2334;
   --text-color: #fff;
-  --font-family: "Caveat";
-  --regular-font-family: "Lato", sans-serif;
   --font-size: 16px;
   --text-active-color: #637eae;
 }
@@ -21,7 +19,7 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  font-family: var(--font-family);
+  font-family: var(--font-caveat);
 }
 
 html,
