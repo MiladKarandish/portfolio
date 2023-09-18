@@ -30,7 +30,7 @@ $active-button-border-color: #ffffff7c;
     width: 100%;
     height: 1px;
     display: block;
-    background-color: #fff;
+    background-color: var(--text-active-color);
   }
 
   @media (max-width: 500px) {

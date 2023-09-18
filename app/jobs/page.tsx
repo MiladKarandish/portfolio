@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
-import { Fragment, useEffect, useState } from 'react';
-import PageWrapper from '@/components/PageWrapper';
-import styles from './jobs.module.scss';
-import { motion } from 'framer-motion';
+import { Fragment, useEffect, useState } from "react";
+import PageWrapper from "@/components/PageWrapper";
+import styles from "./jobs.module.scss";
+import { motion } from "framer-motion";
 
 interface Job {
   id: number;
@@ -16,24 +16,24 @@ interface Job {
 const jobs: Job[] = [
   {
     id: 1,
-    title: 'Fortune Web Works',
-    role: 'Front-End Developer',
-    date: 'Jun 2020, Aug 2022',
+    title: "Fortune Web Works",
+    role: "Front-End Developer",
+    date: "Jun 2020, Aug 2022",
     keys: [
-      'Making reliable and efficient web apps.',
-      'Deciding the tech stack of every project and reviewing code.',
-      'Finding the best practices and creating, clean, easy to read and reusable components.',
+      "Making reliable and efficient web apps.",
+      "Deciding the tech stack of every project and reviewing code.",
+      "Finding the best practices and creating, clean, easy to read and reusable components.",
     ],
   },
   {
     id: 2,
-    title: 'Pishgamanasia',
-    role: 'Front-End Developer',
-    date: 'Oct 2022, May 2023',
+    title: "Pishgamanasia",
+    role: "Front-End Developer",
+    date: "Oct 2022, May 2023",
     keys: [
-      'Managing junior react developers.',
-      'Developing reliable frontends which work perfectly with the APIs of electronic devices.',
-      ' Working on an efficient workflow between frontend team, backend team and electronic engineers for achieving best results.',
+      "Managing junior react developers.",
+      "Developing reliable frontends which work perfectly with the APIs of electronic devices.",
+      " Working on an efficient workflow between frontend team, backend team and electronic engineers for achieving best results.",
     ],
   },
 ];
@@ -74,33 +74,33 @@ const Jobs = () => {
 
     sizeHandler();
 
-    window.addEventListener('resize', sizeHandler);
+    window.addEventListener("resize", sizeHandler);
 
     return () => {
-      window.removeEventListener('resize', sizeHandler);
+      window.removeEventListener("resize", sizeHandler);
     };
   }, []);
 
   return (
     <PageWrapper>
-      <div className={styles['_']}>
+      <div className={styles["_"]}>
         <h1>Where I've Worked</h1>
 
-        <div className={styles['_container']}>
-          <ul className={styles['_list']}>
+        <div className={styles["_container"]}>
+          <ul className={styles["_list"]}>
             {jobs.map((job) => (
               <li
                 key={job.id}
-                className={styles['_job']}
+                className={styles["_job"]}
                 style={{
                   color:
-                    job.id === activeJob.id ? 'var(--text-active-color)' : '',
+                    job.id === activeJob.id ? "var(--text-active-color-2)" : "",
                 }}
                 onClick={() => setactiveJob(job)}>
                 {job.id === activeJob.id && (
                   <motion.div
-                    layoutId='projects-underline'
-                    className={styles['underline']}
+                    layoutId="projects-underline"
+                    className={styles["underline"]}
                   />
                 )}
 
@@ -109,7 +109,7 @@ const Jobs = () => {
             ))}
           </ul>
 
-          <div className={`has-scroll ${styles['_data']}`}>
+          <div className={`has-scroll ${styles["_data"]}`}>
             {!isSmallScreen
               ? jobDataRenderer(activeJob)
               : jobs.map((job) => (

@@ -15,9 +15,15 @@ $texts-inline-margin: 2rem;
     margin-inline-start: 5rem;
     font-size: 2rem;
 
+    // h1 {
+    //   line-height: 3rem;
+    // }
+
     h2 {
       margin: 1rem;
       margin-inline-start: $texts-inline-margin;
+      margin-top: 0;
+      color: #797979;
     }
 
     h3 {
@@ -29,6 +35,7 @@ $texts-inline-margin: 2rem;
       transform: translateY(200%);
       opacity: 0;
       transition: all 0.5s ease;
+      color: var(--text-active-color-2);
     }
 
     .active {

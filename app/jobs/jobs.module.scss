@@ -50,8 +50,12 @@
     flex-direction: column;
     overflow: auto;
 
-    h2 {
+    * {
       font-family: var(--font-lato);
+    }
+
+    .hash {
+      font-family: var(--font-caveat);
     }
 
     span,
