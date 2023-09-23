@@ -14,7 +14,7 @@ $scrollbar-height: 50vh;
     position: absolute;
     top: 0;
     width: 100%;
-    background-color: #031943;
+    background-color: var(--text-active-color);
     transition: top 0.3s ease;
   }
 

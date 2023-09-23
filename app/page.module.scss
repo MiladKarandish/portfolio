@@ -1,9 +1,8 @@
 $texts-inline-margin: 2rem;
 
 .main {
-  width: 80%;
+  width: 100%;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: flex-start;
   gap: 3rem;
@@ -12,22 +11,24 @@ $texts-inline-margin: 2rem;
 
   ._showcase {
     flex: 1;
-    margin-inline-start: 5rem;
-    font-size: 2rem;
-
-    // h1 {
-    //   line-height: 3rem;
-    // }
+    // margin-inline-start: 5rem;
+    font-size: 4rem;
 
     h2 {
       margin: 1rem;
-      margin-inline-start: $texts-inline-margin;
+      margin-inline-start: 0;
+      // margin-inline-start: $texts-inline-margin;
       margin-top: 0;
       color: #797979;
+      font-family: var(--font-cubano);
+      font-size: 2rem;
+      letter-spacing: 2px;
     }
 
     h3 {
-      margin-inline-start: calc($texts-inline-margin * 2);
+      margin-inline-start: calc($texts-inline-margin * 1);
+      font-family: var(--font-caveat);
+      font-size: 2rem;
     }
 
     ._tech {
@@ -36,6 +37,10 @@ $texts-inline-margin: 2rem;
       opacity: 0;
       transition: all 0.5s ease;
       color: var(--text-active-color-2);
+    }
+
+    ._tech:last-of-type + * {
+      margin-top: 8rem;
     }
 
     .active {
@@ -47,6 +52,56 @@ $texts-inline-margin: 2rem;
       transform: translateY(100%) scale(0.9);
       opacity: 0.1;
     }
+
+    ._contact {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: flex-start;
+      align-items: center;
+
+      a {
+        font-family: var(--font-cubano);
+        letter-spacing: 2px;
+      }
+
+      div {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 0.5rem;
+        border: none;
+        border-radius: 12px;
+        padding: 10px 1rem;
+        padding-inline-end: 1.2rem;
+        text-align: left;
+        font-size: 1.6rem;
+        font-weight: 700;
+        background-color: #ff4500;
+      }
+
+      // div:last-child {
+      //   background-color: #414666;
+      // }
+
+      img {
+        width: 2rem;
+        height: 2rem;
+      }
+    }
+  }
+
+  .right {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 2rem;
+    margin-inline-start: auto;
+  }
+
+  .preview-video {
+    width: 100%;
   }
 
   ._contact {
@@ -55,12 +110,14 @@ $texts-inline-margin: 2rem;
     justify-content: center;
     align-items: center;
     gap: 1rem;
-    margin-inline-start: auto;
-    transform: translateY(2rem);
+    // margin-inline-start: auto;
+    // transform: translateY(2rem);
 
     img {
       cursor: pointer;
       transition: transform 0.3s ease;
+      width: 2.7rem;
+      height: 2.7rem;
     }
 
     img:hover {

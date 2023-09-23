@@ -13,6 +13,7 @@ const links = [
   { href: "/jobs", label: "Jobs", index: 1 },
   { href: "/projects", label: "Projects", index: 2 },
   { href: "/skills", label: "Skills", index: 3 },
+  { href: "/contact-me", label: "Contact Me", index: 4 },
 ];
 
 export default function RootLayout({
