@@ -9,6 +9,10 @@ $active-button-border-color: #ffffff7c;
   gap: 3rem;
   opacity: 1;
 
+  h1 {
+    cursor: pointer;
+  }
+
   a {
     position: relative;
     border: none;
