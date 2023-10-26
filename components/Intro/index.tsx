@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import React, { useEffect, useRef } from 'react';
-import styles from './intro.module.scss';
-import Effect from './Effect';
+import React, { useEffect, useRef } from "react";
+import styles from "./intro.module.scss";
+import Effect from "./Effect";
 
 interface Props {
   callback?: () => void;
@@ -10,7 +10,7 @@ interface Props {
 
 const Intro = ({ callback }: Props) => {
   const canvasRef = useRef<HTMLCanvasElement>(null!);
-  const text: string[] = ['Hello', 'Welcome', 'To My Portfolio'];
+  const text: string[] = ["Welcome To My Portfolio"];
   const changeTime: number = 2;
   let effect = useRef<any>(null!);
   let ctx = useRef<any>(null!);
@@ -18,7 +18,7 @@ const Intro = ({ callback }: Props) => {
 
   useEffect(() => {
     // The canvas context
-    ctx.current = canvasRef.current.getContext('2d', {
+    ctx.current = canvasRef.current.getContext("2d", {
       willReadFrequently: true,
     });
     canvasRef.current.width = window.innerWidth;
